@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Infinite Card Slider JavaScript | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fontawesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #fafafa;
+    }
+
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px; /* Set a maximum width for better responsiveness */
+        overflow: hidden;
+
+    }
+
+    .carousel {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+        min-width: 100%; /* Ensure each item takes full width */
+        box-sizing: border-box;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border: 1px dashed black;
+    }
+
+    .review {
+        text-align: center;
+    }
+
+    .review h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .review button {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .review img {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        margin: 10px 0;
+    }
+
+   .review h2 {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    margin-left: -15rem;
+    margin-top: -3rem;
+}
+.review p {
+    font-size: 1rem;
+    margin: 0;
+    margin-left: -6rem;
+    margin-top: 2rem;
+}
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-right: 11rem;
+    margin-bottom: 1rem;
+}
+
+    .rating i {
+        background: white;
+        color: rgb(224, 212, 44);
+        font-size: 1.3rem;
+        margin: 0 2px;
+    }
+
+    .rating span {
+        background: white;
+        color: black;
+        font-size: 1.3rem;
+        margin-left: 5px;
+    }
+
+    .next-button,
+    .prev-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 3.5rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #333;
+    }
+
+    .next-button {
+        right: 10px;
+    }
+
+    .prev-button {
+        left: 10px;
+    }
+   img[alt="ssreview"] {
+    width: 25rem;
+    height: 19rem;
+    border-radius: 0 0 2rem 2rem;
+}
+    img[alt="sereview"] {
+    margin-top: -1rem;
+    margin-left: 18rem;
+}
+</style>
+<body>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item">
+                <div class="review">
+                    <img src="shoes6.jpg" alt="sereview">
+                    <h2>Good Quality</h2>
+                    <p>I Highly recommend shopping from Kicks...</p>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>5.0</span>
+                    </div>
+                    <img src="shoes3.jpg" alt="ssreview">
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="review">
+                    <img src="shoes5.jpg" alt="sereview">
+                    <h2>Great Service</h2>
+                    <p>Fast delivery and excellent customer service.</p>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>5.0</span>
+                    </div>
+                    <img src="shoes5.jpg" alt="ssreview">
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="review">
+                    <img src="shoes4.jpg" alt="sereview">
+                    <h2>Good Quality</h2>
+                    <p>Wide variety of shoes to choose from.</p>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>5.0</span>
+                    </div>
+                    <img src="shoes4.jpg" alt="ssreview">
+                </div>
+            </div>
+            <!-- Add more carousel items as needed -->
+        </div>
+        <button class="prev-button"><i class="fa-solid fa-circle-chevron-left"></i></button>
+        <button class="next-button"><i class="fa-solid fa-circle-chevron-right"></i></button>
+    </div>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        let currentIndex = 0;
+
+        function showItem(index) {
+            const itemWidth = document.querySelector('.carousel-item').offsetWidth;
+            carousel.style.transform = `translateX(${-index * itemWidth}px)`;
+        }
+
+        function nextItem() {
+            currentIndex = (currentIndex + 1) % carousel.children.length;
+            showItem(currentIndex);
+        }
+
+        function prevItem() {
+            currentIndex = (currentIndex - 1 + carousel.children.length) % carousel.children.length;
+            showItem(currentIndex);
+        }
+
+        // Attach event listeners to next and previous buttons
+        document.querySelector('.next-button').addEventListener('click', nextItem);
+        document.querySelector('.prev-button').addEventListener('click', prevItem);
+
+        // Initial display
+        showItem(currentIndex);
+    </script>
+</body>
+</html>

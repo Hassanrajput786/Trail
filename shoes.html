@@ -1,0 +1,1310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <!-- Font-Awasome -->
+<script src="https://kit.fontawesome.com/6be7cdc9e8.js" crossorigin="anonymous"></script>
+
+   <!-- Google Fonts--> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap" rel="stylesheet">
+ 
+<title>Shoes E-Commerce website</title>
+<style>
+
+ html {
+    overflow-x: hidden;
+    width: 75rem;
+    margin: auto;
+}
+body {
+    background: #e7e7e3;
+    height: 246.5rem;
+    width: 75rem;
+    overflow-y: hidden;
+    overflow-x: hidden;
+     font-family: "Rubik";
+}
+ *{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+nav {
+    background: #fafafa;
+    height: 80px;
+    width: 100%;
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+label.logo {
+    color: black;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0rem 30rem;
+    font-weight: 900;
+    font-family: "Rubik Mono One", monospace;
+    position: relative;
+    top: 0rem;
+}
+nav ul {
+    float: left;
+    margin-right: -25rem;
+    margin-left: 0rem;
+    font-size: 4rem;
+    position: relative;
+    top: -0.8rem;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: black;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+}
+a:hover{
+  background: #1b9bff;
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: black;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  label.logo {
+    font-size: 30px;
+    padding-right: 23rem;
+    display: flex;
+    justify-content: center;
+}
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+ .checkbtn {
+    display: block;
+    position: absolute;
+    left: 6rem;
+}
+label.logo {
+  padding-right: 10rem;
+}
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+
+  }
+  a:hover,a.active{
+    background: none;
+    color: black;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+
+.container .searchbox {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 53px;
+    transition: 0.4s linear;
+    overflow: hidden;
+    left: 58rem;
+    top: -6rem;
+}
+.container .searchbox .searchbox__input {
+  display: block;
+  appearance: none;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  background-color: white;
+  padding: 15px;
+  color: #24233A;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.4s linear;
+}
+.container .searchbox .searchbox__input::placeholder {
+  color: #24233A;
+}
+.container .searchbox .searchbox__icon {
+    position: absolute;
+    right: calc(53px / 2);
+    top: 50%;
+    transform: translate(50%, -50%);
+    width: 30px;
+    height: 40px;
+    pointer-events: none;
+}
+.container .searchbox .searchbox__icon path {
+  fill: black;
+  transition: 0.4s linear;
+}
+.container .searchbox:focus-within {
+  max-width: 270px;
+
+}
+.container .searchbox:focus-within .searchbox__input {
+  background-color: #FFF;
+  padding-right: 50px;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+.container .searchbox:focus-within .searchbox__icon path {
+  fill: #24233A;
+}
+.sicons {
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    position: relative;
+    left: 50rem;
+    top: -8.7rem;
+}
+.sicons span {
+    background: orange;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.3rem;
+    position: relative;
+    left: 4rem;
+    top: -2.7rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+
+
+
+
+
+.shome h1 {
+    position: absolute;
+    font-size: 9rem;
+    font-weight: 800;
+    transform: translateY(100%);
+    animation: h1 2s ease-in forwards;
+}
+ @keyframes h1 {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+.shome h2.ex2 {
+    font-size: 11rem;
+    color: blue;
+    position: absolute;
+    left: 37rem;
+    top: 14rem;
+    transform: translateY(-100%);
+    animation: h2 2s ease-out forwards;
+}
+ @keyframes h2 {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+ .econtainer{
+        width: 69.2rem;
+        height: 46rem;
+        background: url('./shoe.jpg');
+        position: absolute;
+        top: 28rem;
+        margin: 1.5rem;
+        border-radius: 4rem;
+        background-position: center;
+        background-size: cover;
+    }
+   .back-frem {
+    width: 10rem;
+    height: 20rem;
+    background: white;
+    border-radius: 23px;
+    position: relative;
+    bottom: -23rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    left: 56rem;
+}
+   .back-frem .back-chang {
+    width: 145px;
+    height: 148px;
+    background: wheat;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 23px;
+}
+    .back-frem .back-chang img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+.shoesimg h2 {
+    position: relative;
+    top: 47rem;
+    font-size: 3rem;
+    color: white;
+    left: 4rem;
+    width: 23rem;
+}
+.shoesimg p {
+    position: relative;
+    top: 48rem;
+    color: white;
+    font-size: 1.3rem;
+    left: 4rem;
+    width: 18rem;
+}
+button {
+    position: relative;
+    top: 49rem;
+    left: 4rem;
+    border-radius: 0.5rem;
+    padding: 0.6rem;
+    background: blue;
+    color: white;
+}
+
+h3 {
+    position: relative;
+    top: 39rem;
+    left: 3rem;
+    transform: rotate(-90deg);
+    transform-origin: left;
+    background: black;
+    width: 13rem;
+    color: white;
+    padding: 12px;
+    border-radius: 0 0 0.6rem 0.6rem;
+    width: 15rem;
+}
+.shoesimg {
+    position: relative;
+    top: -5rem;
+}
+  .classheading p {
+    position: relative;
+    top: 47rem;
+    font-size: 4rem;
+    left: 3rem;
+    font-weight: 700;
+}
+
+.home-text {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    top: 49rem;
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 3rem;
+    width: 55rem;
+    left: 9rem;
+}
+
+.home-text h1 {
+    color: black;
+    font-size: 60px;
+    line-height: 56px;
+    font-weight: 700;
+    margin: 0 0 20px;
+    position: relative;
+    left: -20rem;
+}
+.home-text p{
+    margin:0;
+    overflow: hidden;
+}
+p.animate-text {
+    position: relative;
+    top: -1rem;
+    left: -20rem;
+}
+.home-text p span{
+    font-size: 40px;
+    color:#ff2c45;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 46px;
+    display: none;
+}
+ .home-text p span.text-in{
+    display: block;
+    animation: textIn .5s ease;
+}
+.home-text p span.text-out{
+    animation: textOut .5s ease;
+}
+@keyframes textIn{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+@keyframes textOut{
+    0%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(-100%);
+
+    }
+}
+
+.classheading img {
+    position: relative;
+    width: 12rem;
+    height: 15rem;
+    top: 59rem;
+    left: 4rem;
+    border: 8px solid white;
+    border-radius: 1rem
+}
+.classheading h4 {
+    position: relative;
+    top: 58rem;
+    left: 4rem;
+    font-size: .9rem;
+}
+.classheading button {
+    position: relative;
+    top: 39rem;
+    left: 57rem;
+    border-radius: 0.5rem;
+    padding: 0.6rem;
+    background: blue;
+    color: white;
+    font-size: 1rem;
+}
+
+.navheading button {
+    position: relative;
+    top: 57rem;
+    left: 4rem;
+    width: 13rem;
+    font-size: .7rem;
+    background: #391f1e;
+}
+.shoesNavigation {
+    position: relative;
+    top: 0.7rem;
+}
+.shoesNavigation1 {
+    position: relative;
+    top: -20rem;
+    left: 17rem;
+}
+.shoesNavigation2 {
+    position: relative;
+    top: -40.7rem;
+    left: 34rem;
+}
+.shoesNavigation3 {
+    position: relative;
+    top: -61.6rem;
+    left: 51rem;
+}
+.navshoesimg {
+    position: relative;
+    top: -16rem;
+    width: 14rem;
+}
+.navshoesimg span {
+    background: blue;
+    width: ;
+    position: relative;
+    top: 61.4rem;
+    left: 4.5rem;
+    z-index: 1;
+    padding: 0.9rem;
+    border-radius: 0.7rem 0rem 3rem 0rem;
+    color: white;
+    font-size: .8rem;
+}
+.shoesNavigation {
+    position: relative;
+    top: 1rem;
+}
+:is(.shoesNavigation, .shoesNavigation1, .shoesNavigation2, .shoesNavigation3) span{
+    position: relative;
+    top: 45rem;
+}
+
+.categories h1 {
+    color: white;
+    background: #391f1e;
+    padding: 4rem;
+    top: -13rem;
+    position: relative;
+    height: 40rem;
+    width: 72rem;
+}
+.categories .fa-circle-left {
+    position: relative;
+    top: -51rem;
+    left: 60rem;
+    font-size: 2.5rem;
+    color: white;
+}
+.categories .fa-circle-right {
+    position: relative;
+    left: 60.5rem;
+    top: -51rem;
+    font-size: 2.5rem;
+    color: white;
+}
+.categoriesimg img {
+    width: 34rem;
+    height: 33.4rem;
+    position: relative;
+    top: -48.3rem;
+    left: 4rem;
+    border-radius: 5rem 0 0 0;
+}
+.categoriesimg i {
+    position: relative;
+    top: -50rem;
+    left: 37.5rem;
+    z-index: 1;
+    font-size: 2.5rem;
+}
+.categoriesimg2 img {
+    width: 33.9rem;
+    height: 33.3rem;
+    position: relative;
+    top: -82rem;
+    left: 36rem;
+}
+.categoriesimg2 i {
+    position: relative;
+    top: -84rem;
+    left: 70rem;
+    z-index: 1;
+    font-size: 2.4rem;
+}
+.rating i {
+    background: white;
+    color: rgb(224, 212, 44);
+    z-index: 1;
+    position: relative;
+    top: -11.8rem;
+    left: 2rem;
+}
+.rating1 i {
+    background: white;
+    color: rgb(224, 212, 44);
+    z-index: 1;
+    position: relative;
+    top: -11.8rem;
+    left: 2rem;
+}
+.rating2 i {
+    background: white;
+    color: rgb(224, 212, 44);
+    z-index: 1;
+    position: relative;
+    top: -11.8rem;
+    left: 2rem;
+}
+:is(.rating ,.rating1, .rating2) span {
+    background: white;
+    color: black;
+    z-index: 1;
+    position: relative;
+    top: -11.8rem;
+    left: 2.5rem;
+    font-size: 1.3rem;
+}
+.review {
+  max-width: 16rem;
+}
+.review h1 {
+    position: relative;
+    top: -76rem;
+    font-size: 4rem;
+    left: 3rem;
+}
+
+.review button {
+    position: relative;
+    top: -79.5rem;
+    left: 60rem;
+    width: 8rem;
+}
+.reviewimg {
+    position: relative;
+    top: -79rem;
+    left: 3rem;
+}
+.reviewimg1 {
+    position: relative;
+    top: -120.8rem;
+    left: 25rem;
+}
+.reviewimg2 {
+    position: relative;
+    top: -162.5rem;
+    left: 47rem;
+}
+:is(.reviewimg , .reviewimg1 , .reviewimg2) h2 {
+    background: white;
+    width: 20rem;
+    padding: 1rem;
+    height: 15rem;
+    border-radius: 1rem 1rem 0 0;
+    font-size: 1.5rem;
+}
+:is(.reviewimg , .reviewimg1 , .reviewimg2) p{
+    position: relative;
+    top: -11.5rem;
+    left: 1rem;
+}
+:is(.reviewimg , .reviewimg1 , .reviewimg2) img {
+      height: 19rem;
+    width: 20rem;
+    border-radius: 0rem 0rem 5rem 5rem;
+    position: relative;
+    top: -11rem;
+}
+.reviewdamo img {
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    left: 14rem;
+    position: relative;
+    top: 6.6rem;
+}
+.footer {
+    position: relative;
+    top: -170rem;
+    left: 1rem;
+    background: #5c5ecb;
+    border-radius: 1rem 1rem 0 0;
+    width: 70rem;
+    padding: 3rem;
+    color: white;
+}
+.footer input {
+    padding: 0.6rem;
+    width: 16rem;
+    border-radius: 0.3rem;
+    border: 2px solid white;
+    background: #5c5ecb;
+}
+.footer input::placeholder{
+    color:white;
+}
+.footer button {
+    padding: 0.6rem;
+    background: #391f1e;
+    color: white;
+    width: 5rem;
+    position: relative;
+    top: 0rem;
+    left: 0rem;
+    font-size: .9rem;
+}
+.footer h2 {
+    position: relative;
+    top: -7rem;
+    font-size: 7rem;
+    left: 41rem;
+    width: 20rem;
+}
+.footerend {
+    position: relative;
+  top: -183rem;
+    background: #391f1e;
+    color: white;
+    border-radius: 2rem 2rem 0 0;
+    padding: 2rem;
+    width: 70rem;
+    left: 1rem;
+    height: 23vh;
+}
+.footerend p {
+    position: relative;
+    top: 4rem;
+    font-size: 1.2rem;
+    width: 18rem;
+}
+.footerend h1 {
+    position: relative;
+    top: 2rem;
+    width: 10rem;
+}
+.ffcategories {
+    position: relative;
+    top: -5rem;
+    left: 23rem;
+    width: 7rem;
+}
+.ffcategories h2 {
+    font-size: 2rem;
+    top: -1rem;
+    position: relative;
+}
+.ffcategories span {
+    display: list-item;
+    list-style: none;
+    margin: 0.7rem 0;
+    top: -1rem;
+    position: relative;
+}
+.ffcompany {
+    position: relative;
+    top: -12.5rem;
+    left: 37rem;
+    width: 10rem;
+}
+
+.ffcompany h5 {
+    font-size: 2rem;
+    position: relative;
+    top: -5.5rem;
+}
+.ffcompany span {
+    display: list-item;
+    list-style: none;
+    margin: 1.5rem 0;
+    top: -6rem;
+    position: relative;
+}
+
+.ffollow {
+    position: relative;
+    left: 50rem;
+    top: -29.5rem;
+    font-size: 2rem;
+    width: 9rem;
+}
+.footer i {
+    position: relative;
+    z-index: 1;
+    top: -15.2rem;
+    left: 59rem;
+    font-size: 1.8rem;
+    color: yellow;
+    border-radius: 8rem;
+}
+.fficons {
+    padding: 1rem;
+    font-size: 2.3rem;
+    width: 14rem;
+    position: relative;
+    left: -1rem;
+}
+/* Animation wave start*/
+.hwave {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(60deg, rgb(92, 94, 203) 0%, rgb(92, 94, 203) 100%);
+    color: #391f1e;
+  top: -180rem;
+    width: 70rem;
+    left: 1rem;
+}
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+    min-height: 170px;
+    max-height: 150px;
+}
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+}
+/*Animation wave End*/
+@media only screen and (max-width: 1500px) and (min-width: 1300px) {
+    .footerend {
+    height: 26vh;
+}
+
+}
+@media only screen and (max-width: 1299px) and (min-width: 1251px) {
+.footerend {
+    height: 40vh;
+}
+.shome h2.ex2 {
+    left: 36rem;
+}
+.econtainer {
+    left: 4.5rem;
+}
+h3{
+    left: 4.5rem;
+}
+.shome h1 {
+    left: 8rem;
+}
+.shoesNavigation3 {
+    position: relative;
+    top: -61.6rem;
+    left: 55rem;
+}
+.shoesNavigation2 {
+    position: relative;
+    top: -40.7rem;
+    left: 38rem;
+}
+.shoesNavigation1 {
+    position: relative;
+    top: -20rem;
+    left: 18rem;
+}
+.classheading button {
+    position: relative;
+    top: 39rem;
+    left: 61rem;}
+
+.categories h1 {
+    top: -13rem;
+    position: relative;
+    height: 42rem;
+    width: 75rem;
+}
+.categoriesimg2 img {
+    width: 34.9rem;
+    height: 33.3rem;
+    position: relative;
+    top: -82rem;
+    left: 38rem;
+}
+.reviewimg {
+    left: 3rem;
+    top: -77rem;
+}
+.reviewimg1 {
+    left: 27rem;
+    top: -119.5rem;
+}
+.reviewimg2 {
+    left: 51rem;
+}
+.review button {
+    left: 62rem;
+}
+.footer {
+    top: -190rem;
+    left: 2.5rem; 
+}
+.hwave {
+    top: -200rem; 
+    left: 2.5rem;
+}
+.footerend {
+    top: -202rem;
+    left: 2.5rem;
+}
+body {
+    height: 254.5rem;
+}
+.navheading button {
+    position: relative;
+    top: 57rem;
+    left: 4rem;
+    width: 13rem;
+    font-size: .7rem;
+    background: #391f1e;
+}
+}
+@media only screen and (max-width: 1284px) and (min-width: 1251px) {
+.econtainer {
+    left: 3.5rem;
+}
+}
+@media only screen and (max-width: 1250px) and (min-width: 1080px) {
+    .footerend {
+    height: 40vh;
+}
+.shome h2.ex2 {
+    left: 30rem;   
+}
+.econtainer {
+    left: 1.5rem;
+}
+h3{
+    left: 4.5rem;
+}
+.shome h1 {
+    left: 4rem;
+}
+.categories h1 {
+    top: -13rem;
+    position: relative;
+    height: 42rem;
+    width: 75rem;
+}
+.categoriesimg2 img {
+    width: 34.9rem;
+    height: 33.3rem;
+    position: relative;
+    top: -82rem;
+    left: 38rem;
+}
+.reviewimg {
+    left: 4rem;
+}
+.reviewimg1 {
+    left: 28rem;
+}
+.reviewimg2 {
+    left: 51rem;
+}
+.review button {
+    left: 62rem;
+}
+.footer {
+    left: 2.5rem; 
+}
+.hwave {
+    left: 2.5rem;
+}
+.footerend {
+    left: 2.5rem;
+   
+}
+}
+@media only screen and (max-width: 1079px) and (min-width: 940px) {
+     .container {
+    width: 75rem;
+}
+     html {
+    overflow-x: hidden;
+    width: 75rem;
+    margin: auto;
+}
+body {
+    background: #e7e7e3;
+    height: 246.5rem;
+    width: 75rem;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.footerend {
+    height: 40vh;
+}
+.shome h2.ex2 {
+    left: 30rem;   
+}
+.econtainer {
+    left: 1.5rem;
+}
+h3{
+    left: 4.5rem;
+}
+.shome h1 {
+    left: 4rem;
+}
+.categories h1 {
+    top: -13rem;
+    position: relative;
+    height: 42rem;
+    width: 75rem;
+}
+.categoriesimg2 img {
+    width: 34.9rem;
+    height: 33.3rem;
+    position: relative;
+    top: -82rem;
+    left: 38rem;
+}
+.reviewimg {
+    left: 4rem;
+}
+.reviewimg1 {
+    left: 28rem;
+}
+.reviewimg2 {
+    left: 51rem;
+}
+.review button {
+    left: 62rem;
+}
+.footer {
+    left: 2.5rem; 
+}
+.hwave {
+    left: 2.5rem;
+}
+.footerend {
+    left: 2.5rem;
+   
+}
+}
+
+
+
+
+</style>
+<body>
+    <div class="shome">
+           <div class="container">
+
+
+       <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a href="#">New Drops    <i class="fa-solid fa-fire"></i></a></li>
+        <li><a href="#">Men    <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
+        <li><a href="#">Women    <i class="fa-sharp fa-solid fa-caret-down"></i></a></li>
+      </ul>
+      <label class="logo">KICKS</label>
+    </nav>
+    <div class="container">
+    <div class="searchbox">
+      <input type="text" class="searchbox__input"  />
+      <svg class="searchbox__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966">
+        <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17s-17-7.626-17-17S14.61,6,23.984,6z" />
+      </svg>
+    </div>
+  </div>
+  <div class="sicons">
+    <i class="fa-solid fa-user"></i>
+    <span>0</span>
+  </div>
+
+
+
+<div id="eheading">
+    <h1 class="ex1">Do IT</h1>
+     <h2 class="ex2"> RIGHT</h2>
+</div>
+
+<div class="econtainer">
+      <div class="back-frem">
+    <div class="back-chang" onclick="background1()"><img src="./shoe.jpg" alt=""></div>
+    <div class="back-chang" onclick="background2()"><img src="./shoe2.jpg" alt=""></div>
+    </div>
+</div>
+
+<h3>Nike Product of the Year</h3>
+ <div class="shoesimg">
+        <h2>NIKE AIR MAX</h2>
+        <p>Nike introducing the new air max 
+        for <br> everyon's comfort</p>
+        <button>SHOPE NOW</button>
+ </div>
+    </div>
+    </div>
+
+     <div class="classheading">
+             <div class="home-text">
+                 <h1>DON'T MISS OUT</h1>
+                 <p class="animate-text">
+                    <span>NEW DROP</span>
+                    <span>SHOPE 25% OFF</span>
+                    <span>Available at KICK.COM</span>
+                 </p>
+            </div>
+
+        <button>Shop New Drops</button>
+        <div class="navshoesimg">
+              <div class="shoesNavigation">
+                 <img src="./shoes1.jpg" alt="">
+                 <div class="navheading">
+                    <span>NEW</span>
+                     <h4>ADIDAS 4DFWD X PARLY <br> RUNNING SHOES</h4>
+                     <button>ADD MORE - $124</button>
+                 </div>
+            </div>  
+          
+             <div class="shoesNavigation1">
+                 <img src="./shoes1.jpg" alt="">
+                 <div class="navheading">
+                    <span>NEW</span>
+                     <h4>ADIDAS 4DFWD X PARLY <br> RUNNING SHOES</h4>
+                     <button>ADD MORE - $124</button>
+                 </div>
+            </div> 
+                  <div class="shoesNavigation2">
+                 <img src="./shoes1.jpg" alt="">
+                 <div class="navheading">
+                    <span>NEW</span>
+                     <h4>ADIDAS 4DFWD X PARLY <br> RUNNING SHOES</h4>
+                     <button>ADD MORE - $124</button>
+                 </div>
+            </div> 
+                  <div class="shoesNavigation3">
+                 <img src="./shoes1.jpg" alt="">
+                    <div class="navheading">
+                        <span>NEW</span>
+                     <h4>ADIDAS 4DFWD X PARLY <br> RUNNING SHOES</h4>
+                     <button>ADD MORE - $124</button>
+                 </div>
+            </div> 
+        </div>
+          
+
+ </div>
+
+<div class="categories">
+    <h1>CATEGORIES</h1>
+    <i class="fa-solid fa-circle-left"></i>
+    <i class="fa-solid fa-circle-right"></i>
+    <div class="categoriesimg">
+        <i class="fa-solid fa-location-arrow"></i>
+        <img src="./shoes5.jpg" alt="">
+    </div>
+    <div class="categoriesimg2">
+        <i class="fa-solid fa-location-arrow"></i>
+        <img src="./shoes5.jpg" alt="">
+    </div>
+</div>
+
+<div class="review">
+    <h1>REVIEWS</h1>
+    <button>SEE ALL</button>
+
+    <div class="reviewimg">
+        <div class="reviewdamo">
+            <img src="./shoes6.jpg" alt="">
+             <h2>Good Quality</h2>
+        <p>I Highly recomand shopping <br>
+         from Kicks...</p>
+         <div class="rating">
+          <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i> 
+        <span>5.0</span> 
+         </div>
+
+        </div>
+        <img src="./shoes3.jpg" alt="">
+    </div>
+   
+
+    
+    <div class="reviewimg1">
+        <div class="reviewdamo">
+            <img src="./shoes6.jpg" alt="">
+             <h2>Good Quality</h2>
+        <p>I Highly recomand shopping <br>
+        from Kicks...</p>
+        <div class="rating1">
+          <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>   
+         <span>5.0</span>
+         </div>
+        </div>
+        <img src="./shoes5.jpg" alt="">
+    </div>
+  
+
+  
+     <div class="reviewimg2">
+        <div class="reviewdamo">
+            <img src="./shoes6.jpg" alt="">
+             <h2>Good Quality</h2>
+        <p>I Highly recomand shopping <br>
+         from Kicks...</p>
+         <div class="rating2">
+          <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i> 
+         <span>5.0</span>
+
+         </div>
+        </div>
+        <img src="./shoes4.jpg" alt="">
+    </div>
+   
+</div>
+
+  
+      <div class="footer">
+          <H1>JOIN OUR KICKSPLUS <br> CLUB & GET 15% OFF</H1>
+          <p>Sign up for free join the comunity </p>
+          <input type="email" placeholder="Email Address">
+          <button>Submit</button>
+          <h2>KICK</h2>
+<i class="fa-solid fa-square-plus"></i>
+      </div>
+
+<div class="hwave">
+
+<div>
+<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+<defs>
+<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+</defs>
+<g class="parallax">
+<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+<use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+<use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+</g>
+</svg>
+</div>
+</div>
+
+
+      <div class="footerend">
+          <h1>About Us</h1>
+          <p>We are the biggest hyperstore in<br> the universe.We got you all ever<br> with our exclusive collection<br> and latest drops.</p>
+
+           <div class="ffcategories">
+                <h2>Categories</h2>
+          <span>Runner</span>
+          <span>Sneakers</span>
+          <span>Baskitballl</span>
+          <span>Outdoor</span>
+          <span>Hiking</span>
+           </div>
+         
+
+            <div class="ffcompany">
+                <h5>Company</h5>
+            <span>About</span>
+            <span>Contact</span>
+            <span>Blog</span>
+            </div>
+            
+
+            <div class="ffollow">
+                <h4>Follow us</h4>
+                <div class="fficons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>
+          
+
+      </div>
+          <script>
+             
+
+
+ function background1() {
+        document.querySelector('.econtainer').style.background = "url('./shoe.jpg') center center / cover";
+    }
+    function background2() {
+        document.querySelector('.econtainer').style.background = "url('./shoe2.jpg') center center / cover";
+    }
+
+
+
+
+                const txts=document.querySelector(".animate-text").children,
+               txtsLen=txts.length;
+           let index=0;
+          const textInTimer=3000,
+                textOutTimer=2800;
+
+         function animateText() {
+            for(let i=0; i<txtsLen; i++){
+              txts[i].classList.remove("text-in","text-out");  
+            }
+            txts[index].classList.add("text-in");
+
+            setTimeout(function(){
+                txts[index].classList.add("text-out");              
+            },textOutTimer)
+
+            setTimeout(function(){
+
+              if(index == txtsLen-1){
+                  index=0;
+                }
+               else{
+                   index++;
+                 }
+                animateText();
+            },textInTimer); 
+         }
+         
+         window.onload=animateText;
+
+
+
+          </script>
+</body>
+</html>
